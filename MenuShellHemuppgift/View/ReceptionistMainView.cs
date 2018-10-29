@@ -64,23 +64,23 @@ namespace MenuShellHemuppgift.View
                     Console.ResetColor();
                 }
 
-                ConsoleKeyInfo ckey = Console.ReadKey();
+                ConsoleKeyInfo consoleKey = Console.ReadKey();
 
-                if (ckey.Key == ConsoleKey.DownArrow)
+                if (consoleKey.Key == ConsoleKey.DownArrow)
                 {
                     if (_index == items.Count - 1)
                     {
                     }
                     else { _index++; }
                 }
-                else if (ckey.Key == ConsoleKey.UpArrow)
+                else if (consoleKey.Key == ConsoleKey.UpArrow)
                 {
                     if (_index <= 0)
                     {
                     }
                     else { _index--; }
                 }
-                else if (ckey.Key == ConsoleKey.Enter)
+                else if (consoleKey.Key == ConsoleKey.Enter)
                 {
                     Console.Clear();
                     return items[_index];

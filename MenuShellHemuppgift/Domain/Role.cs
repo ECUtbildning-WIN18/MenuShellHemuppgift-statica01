@@ -4,6 +4,8 @@ namespace MenuShellHemuppgift.Domain
 {
     enum Role
     {
-        Administrator
+        administrator,
+        receptionist,
+        veterinarian
     }  
 }

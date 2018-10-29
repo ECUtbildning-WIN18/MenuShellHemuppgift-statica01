@@ -15,11 +15,16 @@ namespace MenuShellHemuppgift
 
             var authenticateUser = logInView.Display();
 
-            if (authenticateUser.Role == Role.Administrator)
+            if (authenticateUser.Role == Role.administrator)
             {
                 var adminMainView = new AdminMainView(user.LoadUsers());
                 adminMainView.Display();
             } 
+           /* else if (authenticateUser.Role == Role.receptionist)
+            {
+                var receptionistMainView = new ReceptionistMainView();
+                receptionistMainView.Display();
+            }*/
         }
     }
 }

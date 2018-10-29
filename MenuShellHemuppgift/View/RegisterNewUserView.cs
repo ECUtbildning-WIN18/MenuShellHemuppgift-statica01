@@ -27,21 +27,24 @@ namespace MenuShellHemuppgift.View
                 Console.Write("Add user role: ");
                 var role = Console.ReadLine();
                 
-                Console.Write("Is this correct? (Y)es (N)o");
+                Console.WriteLine("Is this correct? (Y)es (N)o");
 
-                var correctChoice = Console.ReadKey(true);
+                var keyChoice = Console.ReadKey(true);
 
-                var user = new User(username, password, (Role)Enum.Parse(typeof(Role), role));
-
-                if (!_users.ContainsKey(user.Username))
+                if (keyChoice.Key == ConsoleKey.Y)
                 {
-                    _users.Add(user.Username, user);
-                    correctInformation = false;
-                }
-                else
-                {
-                    Console.Write("User already exists.");
-                    Thread.Sleep(3000);
+                    var user = new User(username, password, (Role) Enum.Parse(typeof(Role), role));
+
+                    if (!_users.ContainsKey(user.Username))
+                    {
+                        _users.Add(user.Username, user);
+                        correctInformation = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("User already exists.");
+                        Thread.Sleep(200);
+                    }
                 }
             } while (correctInformation);
         }
