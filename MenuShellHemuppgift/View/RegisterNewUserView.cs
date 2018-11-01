@@ -37,13 +37,16 @@ namespace MenuShellHemuppgift.View
 
                     if (!_users.ContainsKey(user.Username))
                     {
+                        // TODO: INSERT INTO User ...
+
                         _users.Add(user.Username, user);
+
                         correctInformation = false;
                     }
                     else
                     {
                         Console.WriteLine("User already exists.");
-                        Thread.Sleep(200);
+                        Thread.Sleep(2000);
                     }
                 }
             } while (correctInformation);

@@ -40,7 +40,7 @@ namespace MenuShellHemuppgift.View
 
                     if (authenticateUser == null)
                     {
-                        Console.Clear();
+                       // Console.Clear();
                         Console.WriteLine("\nLogin failed, check your details and try again");
                         Thread.Sleep(3000);
                     }

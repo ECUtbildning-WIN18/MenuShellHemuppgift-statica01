@@ -5,6 +5,6 @@ namespace MenuShellHemuppgift.Services
 {
     interface IUserService
     {
-        IDictionary<string, User> LoadUsers();
+        IDictionary<string, User> LoadUsers(); 
     }
 }

@@ -8,8 +8,9 @@ namespace MenuShellHemuppgift
     {
         static void Main(string[] args)
         {
-            var user = new UserTestService();
-            var authenticationService = new AuthenticationService(user);
+           // var user = new UserTestService();
+            var userService = new SqlUserService();
+            var authenticationService = new AuthenticationService(userService);
 
             var logInView= new LogInView(authenticationService);
 
@@ -17,10 +18,10 @@ namespace MenuShellHemuppgift
 
             if (authenticateUser.Role == Role.administrator)
             {
-                var adminMainView = new AdminMainView(user.LoadUsers());
+                var adminMainView = new AdminMainView(userService.LoadUsers());
                 adminMainView.Display();
             } 
-           /* else if (authenticateUser.Role == Role.receptionist)
+           /*else if (authenticateUser.Role == Role.receptionist)
             {
                 var receptionistMainView = new ReceptionistMainView();
                 receptionistMainView.Display();

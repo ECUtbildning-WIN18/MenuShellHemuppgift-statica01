@@ -12,21 +12,16 @@ namespace MenuShellHemuppgift.View
 
         public SearchUsersView(IDictionary<string, User> users) : base("Search user") => _users = users;
 
-        //public IEnumerable<string> Display() <----- Code connected to my other solution in ListUserView
         public IDictionary<string, User> Display()
         {
-            // User userList = null; <----- Code connected to my other solution in ListUserView
-
             Console.Clear();
-            Console.WriteLine("Search all users.\n");
+            Console.WriteLine("If you wanna search all users, just press enter.\n");
 
             Console.Write("Search by username: ");
-            //var dictionarySearch = Console.ReadLine().ToLower();  <----- Code connected to my other solution in ListUserView
+           
             var searchWord = Console.ReadLine().ToLower();
-            var filteredList = (IDictionary<string, User>)_users.Where(x => x.Value.Username.Contains(searchWord));
-            // var filteredList = _users.Where(x => x.Value.Username.Contains(dictionarySearch)).Select(x => x.Key);
-            // ^----- Code connected to my other solution in ListUserView
-
+            var filteredList = (IDictionary<string, User>) _users.Where(x => x.Value.Username.Contains(searchWord)).ToDictionary(x => x.Key, x => x.Value);
+   
             return filteredList;
         }
     }

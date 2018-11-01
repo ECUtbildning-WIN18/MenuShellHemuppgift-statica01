@@ -51,6 +51,7 @@
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\SqlUserService.cs" />
     <Compile Include="Services\UserTestService.cs" />
     <Compile Include="View\AdminManageUserView.cs" />
     <Compile Include="View\BaseView.cs" />
